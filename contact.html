@@ -1,0 +1,282 @@
+<style>
+body{background-color: #000;}
+
+
+
+.contact-section {
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+padding: 80px 20px;
+margin-top: 50px;
+}
+
+.contact-wrapper {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.contact-section .section-title {
+color: #d4af37;
+margin-bottom: 20px;
+}
+
+.contact-subtitle {
+text-align: center;
+color: #ffffff;
+font-size: 1.2rem;
+margin-bottom: 50px;
+opacity: 0.9;
+}
+
+/* CONTAINER */
+.contact-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+background: #ffffff;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 10px 40px rgba(212,175,55,0.3);
+border: 2px solid #d4af37;
+}
+
+/* LEFT SIDE */
+.contact-info {
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+padding: 50px;
+color: #ffffff;
+}
+
+.contact-info h3 {
+font-size: 2rem;
+margin-bottom: 30px;
+color: #d4af37;
+}
+
+.contact-item {
+display: flex;
+align-items: flex-start;
+margin-bottom: 30px;
+}
+
+.contact-icon {
+font-size: 2rem;
+margin-right: 20px;
+min-width: 40px;
+color: #d4af37;
+}
+
+.contact-text h4 {
+font-size: 1.2rem;
+margin-bottom: 5px;
+color: #d4af37;
+}
+
+.contact-text p {
+opacity: 0.9;
+line-height: 1.8;
+}
+
+/* SOCIAL */
+.social-links {
+margin-top: 40px;
+}
+
+.social-links h4 {
+margin-bottom: 20px;
+font-size: 1.2rem;
+color: #d4af37;
+}
+
+.social-icons {
+display: flex;
+gap: 15px;
+}
+
+.social-icon {
+width: 45px;
+height: 45px;
+background: rgba(212,175,55,0.2);
+border: 2px solid #d4af37;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+transition: all 0.3s;
+cursor: pointer;
+}
+
+.social-icon:hover {
+background: #d4af37;
+color: #000;
+transform: scale(1.1);
+}
+
+/* RIGHT SIDE FORM */
+.contact-form-container {
+padding: 50px;
+}
+
+.contact-form-container h3 {
+color: #000000;
+font-size: 2rem;
+margin-bottom: 30px;
+}
+
+/* FORM */
+.form-group {
+margin-bottom: 25px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: #000000;
+font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+width: 100%;
+padding: 12px 15px;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+font-size: 1rem;
+transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: #d4af37;
+box-shadow: 0 0 10px rgba(212,175,55,0.2);
+}
+
+.form-group textarea {
+resize: vertical;
+min-height: 120px;
+}
+
+/* SUBMIT BUTTON */
+.form-group input[type="submit"] {
+background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+color: #000;
+border: none;
+cursor: pointer;
+padding: 15px 40px;
+font-size: 1.1rem;
+font-weight: bold;
+border-radius: 50px;
+transition: all 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+transform: translateY(-2px);
+}
+
+/* ROW */
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+}
+
+</style>
+
+       <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Visit Us</h4>
+                            <p>Gol Bazar<br>Sri Ganganagar, Rajasthan<br>India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p>Main: 8340058000<br>Sales: 92568758585<br>Support: 9530869786</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p>info@motorodeal.com<br>sales@motordeal.com<br>support@motordeal.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: 11:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <div class="social-icon"><a href="">📘</a></div>
+                            <div class="social-icon"><a href="https://www.instagram.com/motordeals_used_cars/">📷</a></div>
+                            <div class="social-icon"><a href="">🐦</a></div>
+                            <div class="social-icon"><a href="">🔗</a></div>
+                        </div>
+                    </div>
+                </div>
+
+ 
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="get">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>

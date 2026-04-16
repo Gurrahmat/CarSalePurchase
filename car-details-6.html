@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honda Civic 2023 - AutoDeal</title>
+ <style>
+        /* ===== GLOBAL RESET ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+background-color: #ffffff;
+color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+color: #d4af37;
+padding: 1rem 0;
+box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: #d4af37;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 30px;
+}
+
+nav a {
+color: #d4af37;
+text-decoration: none;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: #f4d03f;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+display: inline-block;
+padding: 12px 30px;
+background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+color: #000;
+text-decoration: none;
+border-radius: 50px;
+transition: 0.3s;
+font-weight: bold;
+border: none;
+cursor: pointer;
+}
+
+.btn:hover {
+background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+transform: translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.details-container {
+max-width: 1200px;
+margin: 40px auto;
+padding: 20px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-button {
+display: inline-block;
+margin-bottom: 20px;
+color: #d4af37;
+text-decoration: none;
+font-weight: bold;
+}
+
+.back-button:hover {
+color: #f4d03f;
+}
+
+/* ===== GRID ===== */
+.details-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+/* ===== IMAGES ===== */
+.car-images {
+display: grid;
+gap: 20px;
+}
+
+.main-image {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+.thumbnail-images {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+}
+
+.thumbnail-images img {
+width: 100%;
+height: 120px;
+object-fit: cover;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.thumbnail-images img:hover {
+transform: scale(1.05);
+}
+
+/* ===== CAR DETAILS ===== */
+.car-details-info {
+background: #d6d5d54a;
+
+padding: 30px;
+margin-bottom: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+
+
+}
+.car-details-info:hover{
+     background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;
+}
+
+.car-details-info h1 {
+color: #d4af37;
+font-size: 2.5rem;
+margin-bottom: 20px;
+}
+
+.price-tag {
+font-size: 2.5rem;
+color: #d4af37;
+font-weight: bold;
+margin-bottom: 30px;
+}
+
+/* ===== TABLE ===== */
+.specs-table {
+width: 100%;
+margin-bottom: 30px;
+}
+
+.specs-table tr {
+border-bottom: 1px solid #ddd;
+}
+
+.specs-table td {
+padding: 12px;
+}
+
+.specs-table td:first-child {
+font-weight: bold;
+color: #d4af37;
+}
+
+/* ===== FEATURES ===== */
+.features-list {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.features-list:hover{
+     background: rgba(255, 255, 255, 0.2); 
+  
+  /* 2. Frosted glass blur (essential) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+  /* 3. Border that mimics light reflection */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* 4. Soft shadow to add depth */
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+  /* Optional: smoothing edges */
+  border-radius: 15px;
+}
+
+.features-list h3 {
+color: #d4af37;
+margin-bottom: 15px;
+}
+
+.features-list ul {
+list-style: none;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.features-list li {
+padding-left: 20px;
+position: relative;
+}
+
+.features-list li::before {
+content: "✓";
+position: absolute;
+left: 0;
+ color: #4CAF50;
+}
+
+/* ===== DESCRIPTION ===== */
+.description-section {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.description-section:hover{background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;}
+
+.description-section h2 {
+color: #d4af37;
+}
+
+/* ===== SELLER ===== */
+.seller-info {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.seller-info:hover{background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;}
+
+.seller-info h3 {
+color: #d4af37;
+}
+
+/* ===== FOOTER ===== */
+footer {
+background: #000;
+color: #d4af37;
+text-align: center;
+padding: 20px;
+border-top: 2px solid #d4af37;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+display: none;
+position: fixed;
+z-index: 9999;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.95);
+align-items: center;
+justify-content: center;
+}
+
+.lightbox:target {
+display: flex;
+}
+
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+}
+
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 40px;
+color: rgb(255, 255, 255);
+font-size: 40px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 40px;
+color: white;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+color: #d4af37;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+.details-grid {
+grid-template-columns: 1fr;
+}
+
+
+.features-list ul {
+    grid-template-columns: 1fr;
+}
+
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+           <div class="logo">🚗 MotorDeal</div>
+            <ul>
+                <li><a href="carsale.html#home">Home</a></li>
+                <li><a href="carsale.html#car">Cars</a></li>
+                <li><a href="sell.html">Sell Car</a></li>
+                <li><a href="contact.html">Contact</a></li>>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="details-container">
+        <a href="carsale.html#home" class="back-button">← Back to All Cars</a>
+        
+        <div class="details-grid">
+            <div class="car-images">
+                <a href="#img1">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800" alt="Honda Civic" class="main-image">
+                </a>
+                <div class="thumbnail-images">
+                    <a href="#img1">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=300" alt="Honda Civic Front">
+                    </a>
+                    <a href="#img2">
+                        <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=300" alt="Honda Civic Side">
+                    </a>
+                    <a href="#img3">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=300" alt="Honda Civic Interior">
+                    </a>
+                </div>
+            </div>
+
+            <div class="car-details-info">
+                <h1>Honda Civic 2023</h1>
+                <div class="price-tag">₹10,00,000</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Brand</td>
+                        <td>Honda</td>
+                    </tr>
+                    <tr>
+                        <td>Model</td>
+                        <td>Civic Sport</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>2023</td>
+                    </tr>
+                    <tr>
+                        <td>Mileage</td>
+                        <td>6,000 km</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>Meteorite Gray</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Type</td>
+                        <td>Petrol</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>CVT Automatic</td>
+                    </tr>
+                    <tr>
+                        <td>Engine</td>
+                        <td>2.0L 4-Cylinder</td>
+                    </tr>
+                    <tr>
+                        <td>MPG</td>
+                        <td>31 City / 40 Highway</td>
+                    </tr>
+                    <tr>
+                        <td>Chassis No</td>
+                        <td>2HGFE2F52PH567890</td>
+                    </tr>
+                </table>
+
+                <a href="index.html#contact" class="btn">Contact Seller Now</a>
+            </div>
+        </div>
+
+        <div class="features-list">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Sport-Tuned Suspension</li>
+                <li>18-inch Alloy Wheels</li>
+                <li>LED Headlights & Taillights</li>
+                <li>Honda Sensing Safety Suite</li>
+                <li>Apple CarPlay & Android Auto</li>
+                <li>7-inch Digital Display</li>
+                <li>Sport Pedals</li>
+                <li>Automatic Climate Control</li>
+                <li>Multi-Angle Rearview Camera</li>
+                <li>Remote Engine Start</li>
+            </ul>
+        </div>
+
+        <div class="description-section">
+            <h2>Description</h2>
+            <p>This 2023 Honda Civic Sport is a perfect blend of style, performance, and efficiency. With only 6,000 km, this vehicle is essentially brand new and ready for its next owner.</p>
+            <p>The Sport trim adds aggressive styling with 18-inch black alloy wheels, sport-tuned suspension, and unique exterior accents. The 2.0L engine delivers responsive performance while achieving an impressive 40 MPG on the highway.</p>
+            <p>The modern Meteorite Gray exterior is paired with a sporty interior featuring a digital instrument cluster and the latest Honda infotainment system with wireless connectivity. Honda Sensing provides peace of mind with advanced safety features.</p>
+            <p><strong>Why Buy This Car?</strong></p>
+            <ul>
+                <li>Nearly new - only 6,000 km</li>
+                <li>Sport trim with performance upgrades</li>
+                <li>Excellent fuel economy - 40 MPG highway</li>
+                <li>Full Honda warranty remaining</li>
+                <li>Modern technology and safety features</li>
+            </ul>
+        </div>
+
+           <div class="seller-info">
+            <h3>Seller Information</h3>
+            <p><strong>Name:</strong> Gurrahmat Sandhu</p>
+            <p><strong>Location:</strong> Sri Ganganagar,Rajasthan</p>
+            <p><strong>Phone:</strong> +91 83400-58000</p>
+            <p><strong>Email:</strong> gurrahmatsinghs.com</p>
+            <p><strong>Available for:</strong> Test drives by appointment</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html#contact" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">Contact Seller Now</a>
+        </div>
+    </div>
+
+    <div id="img1" class="lightbox">
+        <a href="#_" class="lightbox-close">&times;</a>
+        <a href="#img3" class="lightbox-prev">&#10094;</a>
+        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=1600" alt="Honda Civic">
+        <a href="#img2" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click × to close • Use ← → to navigate</div>
+    </div>
+
+    <div id="img2" class="lightbox">
+        <a href="#_" class="lightbox-close">&times;</a>
+        <a href="#img1" class="lightbox-prev">&#10094;</a>
+        <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=1600" alt="Honda Civic Side">
+        <a href="#img3" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click × to close • Use ← → to navigate</div>
+    </div>
+
+    <div id="img3" class="lightbox">
+        <a href="#_" class="lightbox-close">&times;</a>
+        <a href="#img2" class="lightbox-prev">&#10094;</a>
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600" alt="Honda Civic Interior">
+        <a href="#img1" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click × to close • Use ← → to navigate</div>
+    </div>
+
+    <footer>
+       <p>&copy; 2026 MotorDeal. All rights reserved.</p>
+        <p>Email: info@motordeal.com | Phone: +91 83400-58000 </p>
+    </footer>
+</body>
+</html>

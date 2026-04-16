@@ -1,0 +1,177 @@
+<style>.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: #ffffff;
+    color: #000000;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-group input[type="submit"] {
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    padding: 16px 45px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.form-group input[type="submit"]:hover {
+    background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}.sell-section {
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    padding: 80px 20px;
+}
+
+.sell-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 3px solid #d4af37;
+}
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #000000;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+         
+        </style>
+<section class="sell-section" id="sell">
+            <div class="container" style="padding-top:0; padding-bottom:0;">
+                <h2 class="section-title">Sell Your Car</h2>
+                <form class="sell-form" action="#" method="get">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carBrand">Car Brand</label>
+                            <input type="text" id="carBrand" name="carBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carModel">Model</label>
+                            <input type="text" id="carModel" name="carModel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carYear">Year</label>
+                            <input type="number" id="carYear" name="carYear" min="1980" max="2026" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carMileage">Mileage</label>
+                            <input type="text" id="carMileage" name="carMileage" placeholder="e.g., 25,000 km" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carColor">Color</label>
+                            <input type="text" id="carColor" name="carColor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carPrice">Price (₹)</label>
+                            <input type="number" id="carPrice" name="carPrice" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fuelType">Fuel Type</label>
+                        <select id="fuelType" name="fuelType" required>
+                            <option value="">Select Fuel Type</option>
+                            <option value="petrol">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ownerName">Your Name</label>
+                            <input type="text" id="ownerName" name="ownerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerEmail">Email</label>
+                            <input type="email" id="ownerEmail" name="ownerEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerPhone">Phone</label>
+                        <input type="tel" id="ownerPhone" name="ownerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="carDescription">Description</label>
+                        <textarea id="carDescription" name="carDescription" placeholder="Tell us more about your car..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit Listing">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>

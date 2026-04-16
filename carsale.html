@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotorDeals - Buy & Sell Cars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="carssale.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🚗 MotorDeals 🚙</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#sell">Sell Car</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Find Your Dream Car Today</h1>
+        <p>Buy and sell cars with ease and confidence</p>
+        <a href="#cars" class="btn">Browse Cars</a>
+    </section>
+
+    <div class="container">
+        <div class="features">
+            <div class="feature-box">
+                <div class="feature-icon">🚗</div>
+                <h3>Wide Selection</h3>
+                <p>Choose from hundreds of quality vehicles</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">💰</div>
+                <h3>Best Prices</h3>
+                <p>Competitive pricing on all our cars</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">✅</div>
+                <h3>Verified Sellers</h3>
+                <p>All sellers are verified and trusted</p>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Transaction</h3>
+                <p>Safe and secure payment process</p>
+            </div>
+        </div>
+
+        <!-- ✅ Classy search bar, full-width, themed -->
+        <div class="search-filter">
+            <select id="brandFilter">
+                <option value="all">All Brands</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="ford">Ford</option>
+                <option value="bmw">BMW</option>
+            </select>
+            <input type="number" id="maxPrice" placeholder="Max Price (₹)">
+            <button class="btn">Search</button>
+        </div>
+
+        <section id="cars">
+            <h2 class="section-title">Available Cars</h2>
+            <div class="car-grid">
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://media.ed.edmunds-media.com/toyota/camry-hybrid/2021/oem/2021_toyota_camry-hybrid_sedan_xse_fq_oem_1_1600.jpg" alt="Toyota Camry">
+                    </div>
+                    <div class="car-info">
+                        <h3>Toyota Camry</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2022</p>
+                            <p><strong>Mileage:</strong> 15,000 km</p>
+                            <p><strong>Color:</strong> Silver</p>
+                            <p><strong>Fuel:</strong> Diesel</p>
+                        </div>
+                        <div class="car-price">₹30,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-1.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2026/accord-sedan/Mini-Gallery-OP/Exterior/2026_Accord_Gallery_Exterior_01.jpg?sc_lang=en&mw=767&hash=00FEE73F17B3BF007FF9F0C8FEF90CEE" alt="Honda Accord">
+                    </div>
+                    <div class="car-info">
+                        <h3>Honda Accord</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2023</p>
+                            <p><strong>Mileage:</strong> 8,000 km</p>
+                            <p><strong>Color:</strong> Black</p>
+                            <p><strong>Fuel:</strong> Petrol</p>
+                        </div>
+                        <div class="car-price">₹27,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-2.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAR5cRPJ5rCs6km4odW8RpRP5kpDl0CjXuiw&s" alt="Ford Mustang">
+                    </div>
+                    <div class="car-info">
+                        <h3>Ford Mustang</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2021</p>
+                            <p><strong>Mileage:</strong> 22,000 km</p>
+                            <p><strong>Color:</strong> Red</p>
+                            <p><strong>Fuel:</strong> Petrol</p>
+                        </div>
+                        <div class="car-price">₹44,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-3.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://static.toiimg.com/thumb/msid-101758631,width-400,resizemode-4/101758631.jpg" alt="BMW X5">
+                    </div>
+                    <div class="car-info">
+                        <h3>BMW X5</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2023</p>
+                            <p><strong>Mileage:</strong> 5,000 km</p>
+                            <p><strong>Color:</strong> White</p>
+                            <p><strong>Fuel:</strong> Diesel</p>
+                        </div>
+                        <div class="car-price">₹57,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-4.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwOVLRP8rrqdQ1XLFLCRhLK8PrecJGxDkv8Q&s" alt="Toyota Innova">
+                    </div>
+                    <div class="car-info">
+                        <h3>Toyota Innova</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2022</p>
+                            <p><strong>Mileage:</strong> 12,000 km</p>
+                            <p><strong>Color:</strong> Silver</p>
+                            <p><strong>Fuel:</strong> Hybrid</p>
+                        </div>
+                        <div class="car-price">₹28,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-5.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <div class="car-image">
+                        <img src="https://www.team-bhp.com/sites/default/files/styles/amp_high_res/public/2023-honda-city-facelift-01.jpg" alt="Honda City">
+                    </div>
+                    <div class="car-info">
+                        <h3>Honda City</h3>
+                        <div class="car-details">
+                            <p><strong>Year:</strong> 2023</p>
+                            <p><strong>Mileage:</strong> 6,000 km</p>
+                            <p><strong>Color:</strong> Grey</p>
+                            <p><strong>Fuel:</strong> Petrol</p>
+                        </div>
+                        <div class="car-price">₹10,00,000</div>
+                        <div class="car-actions">
+                            <a href="car-details-6.html" class="btn btn-secondary">View Details</a>
+                            <a href="#contact" class="btn">Contact Seller</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SELL SECTION -->
+        <section class="sell-section" id="sell">
+            <div class="container" style="padding-top:0; padding-bottom:0;">
+                <h2 class="section-title">Sell Your Car</h2>
+                <form class="sell-form" action="#" method="get">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carBrand">Car Brand</label>
+                            <input type="text" id="carBrand" name="carBrand" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carModel">Model</label>
+                            <input type="text" id="carModel" name="carModel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carYear">Year</label>
+                            <input type="number" id="carYear" name="carYear" min="1980" max="2026" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carMileage">Mileage</label>
+                            <input type="text" id="carMileage" name="carMileage" placeholder="e.g., 25,000 km" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="carColor">Color</label>
+                            <input type="text" id="carColor" name="carColor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="carPrice">Price (₹)</label>
+                            <input type="number" id="carPrice" name="carPrice" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fuelType">Fuel Type</label>
+                        <select id="fuelType" name="fuelType" required>
+                            <option value="">Select Fuel Type</option>
+                            <option value="petrol">Petrol</option>
+                            <option value="diesel">Diesel</option>
+                            <option value="electric">Electric</option>
+                            <option value="hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ownerName">Your Name</label>
+                            <input type="text" id="ownerName" name="ownerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerEmail">Email</label>
+                            <input type="email" id="ownerEmail" name="ownerEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerPhone">Phone</label>
+                        <input type="tel" id="ownerPhone" name="ownerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="carDescription">Description</label>
+                        <textarea id="carDescription" name="carDescription" placeholder="Tell us more about your car..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Submit Listing">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="contact-wrapper">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <h4>Visit Us</h4>
+                            <p>Gol Bazar<br>Sri Ganganagar, Rajasthan<br>India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <p>Main: 8340058000<br>Sales: 92568758585<br>Support: 9530869786</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <p>info@motorodeal.com<br>sales@motordeal.com<br>support@motordeal.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-text">
+                            <h4>Business Hours</h4>
+                            <p>Mon–Fri: 9:00 AM – 7:00 PM<br>Saturday: 10:00 AM – 6:00 PM<br>Sunday: 11:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <div class="social-icon"><a href="">📘</a></div>
+                            <div class="social-icon"><a href="https://www.instagram.com/motordeals_used_cars/">📷</a></div>
+                            <div class="social-icon"><a href="">🐦</a></div>
+                            <div class="social-icon"><a href="">🔗</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form method="get">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="number" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MotorDeals 🚙 — All rights reserved.</p>
+    </footer>
+</body>
+</html>

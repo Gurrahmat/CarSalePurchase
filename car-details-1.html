@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Camry 2022 - MotorDeal</title>
+    <style>
+        /* ===== GLOBAL RESET ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+line-height: 1.6;
+background-color: #ffffff;
+color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+color: #d4af37;
+padding: 1rem 0;
+box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: bold;
+color: #d4af37;
+}
+
+nav ul {
+display: flex;
+list-style: none;
+gap: 30px;
+}
+
+nav a {
+color: #d4af37;
+text-decoration: none;
+transition: 0.3s;
+}
+
+nav a:hover {
+color: #f4d03f;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+display: inline-block;
+padding: 12px 30px;
+background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+color: #000;
+text-decoration: none;
+border-radius: 50px;
+transition: 0.3s;
+font-weight: bold;
+border: none;
+cursor: pointer;
+}
+
+.btn:hover {
+background: linear-gradient(135deg, #f4d03f 0%, #d4af37 100%);
+transform: translateY(-2px);
+}
+
+/* ===== CONTAINER ===== */
+.details-container {
+max-width: 1200px;
+margin: 40px auto;
+padding: 20px;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-button {
+display: inline-block;
+margin-bottom: 20px;
+color: #d4af37;
+text-decoration: none;
+font-weight: bold;
+}
+
+.back-button:hover {
+color: #f4d03f;
+}
+
+/* ===== GRID ===== */
+.details-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+}
+
+/* ===== IMAGES ===== */
+.car-images {
+display: grid;
+gap: 20px;
+}
+
+.main-image {
+width: 100%;
+height: 400px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+}
+
+.thumbnail-images {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+}
+
+.thumbnail-images img {
+width: 100%;
+height: 120px;
+object-fit: cover;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.thumbnail-images img:hover {
+transform: scale(1.05);
+}
+
+/* ===== CAR DETAILS ===== */
+.car-details-info {
+background: #d6d5d54a;
+
+padding: 30px;
+margin-bottom: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+
+
+}
+.car-details-info:hover{
+     background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;
+}
+
+.car-details-info h1 {
+color: #d4af37;
+font-size: 2.5rem;
+margin-bottom: 20px;
+}
+
+.price-tag {
+font-size: 2.5rem;
+color: #d4af37;
+font-weight: bold;
+margin-bottom: 30px;
+}
+
+/* ===== TABLE ===== */
+.specs-table {
+width: 100%;
+margin-bottom: 30px;
+}
+
+.specs-table tr {
+border-bottom: 1px solid #ddd;
+}
+
+.specs-table td {
+padding: 12px;
+}
+
+.specs-table td:first-child {
+font-weight: bold;
+color: #d4af37;
+}
+
+/* ===== FEATURES ===== */
+.features-list {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.features-list:hover{
+     background: rgba(255, 255, 255, 0.2); 
+  
+  /* 2. Frosted glass blur (essential) */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+
+  /* 3. Border that mimics light reflection */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* 4. Soft shadow to add depth */
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+  /* Optional: smoothing edges */
+  border-radius: 15px;
+}
+
+.features-list h3 {
+color: #d4af37;
+margin-bottom: 15px;
+}
+
+.features-list ul {
+list-style: none;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.features-list li {
+padding-left: 20px;
+position: relative;
+}
+
+.features-list li::before {
+content: "✓";
+position: absolute;
+left: 0;
+ color: #4CAF50;
+}
+
+/* ===== DESCRIPTION ===== */
+.description-section {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.description-section:hover{background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;}
+
+.description-section h2 {
+color: #d4af37;
+}
+
+/* ===== SELLER ===== */
+.seller-info {
+background: #d6d5d54a;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid #d4af37;
+margin-bottom: 30px;
+}
+.seller-info:hover{background: rgba(255, 255, 255, 0.2); 
+  
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+ 
+  border: 1px solid rgba(235, 167, 8, 0.3);
+  
+
+  box-shadow: 0 8px 32px 0 #d4af37;
+  
+
+  border-radius: 15px;}
+
+.seller-info h3 {
+color: #d4af37;
+}
+
+/* ===== FOOTER ===== */
+footer {
+background: #000;
+color: #d4af37;
+text-align: center;
+padding: 20px;
+border-top: 2px solid #d4af37;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+display: none;
+position: fixed;
+z-index: 9999;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.95);
+align-items: center;
+justify-content: center;
+}
+
+.lightbox:target {
+display: flex;
+}
+
+.lightbox img {
+max-width: 90%;
+max-height: 90%;
+}
+
+.lightbox-close {
+position: absolute;
+top: 20px;
+right: 40px;
+color: rgb(255, 255, 255);
+font-size: 40px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 40px;
+color: white;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+color: #d4af37;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+.details-grid {
+grid-template-columns: 1fr;
+}
+
+
+.features-list ul {
+    grid-template-columns: 1fr;
+}
+
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🚗 MotorDeal</div>
+            <ul>
+                <li><a href="carsale.html#home">Home</a></li>
+                <li><a href="carsale.html#car">Cars</a></li>
+                <li><a href="sell.html">Sell Car</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="details-container">
+        <a href="carsale.html#cars" class="back-button">← Back to All Cars</a>
+        
+        <div class="details-grid">
+            <div class="car-images">
+                <a href="#img1">
+                    <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800" alt="Toyota Camry" class="main-image">
+                </a>
+                <div class="thumbnail-images">
+                    <a href="#img1">
+                        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=300" alt="Toyota Camry Front">
+                    </a>
+                    <a href="#img2">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVn4k_Yd6zfAmBTsFUNL4x3F-oowqsw16Bc-juiXnTreh2LJG6qM5u98AZ-fWqzGBUQHDCSQ0EG43BqlT_mqPvlPjAY63tf5COoiyzJl6Lg&s=10" alt="Toyota Camry Side">
+                    </a>
+                    <a href="#img3">
+                        <img src="data:image/jpeg;base64,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" alt="Toyota Camry Interior">
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="car-details-info">
+                <h1>Toyota Camry 2022</h1>
+                <div class="price-tag">₹30,00,000</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Brand</td>
+                        <td>Toyota</td>
+                    </tr>
+                    <tr>
+                        <td>Model</td>
+                        <td>Camry</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>Mileage</td>
+                        <td>15,000 km</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>Silver</td>
+                    </tr>
+                    <tr>
+                        <td>Fuel Type</td>
+                        <td>Diesel</td>
+                    </tr>
+                    <tr>
+                        <td>Transmission</td>
+                        <td>Automatic</td>
+                    </tr>
+                    <tr>
+                        <td>Engine</td>
+                        <td>2.5L 4-Cylinder</td>
+                    </tr>
+                    <tr>
+                        <td>Condition</td>
+                        <td>Excellent</td>
+                    </tr>
+                    <tr>
+                        <td>Chassis No</td>
+                        <td>4T1B11HK8NU123456</td>
+                    </tr>
+                </table>
+
+                <a href="contact.html" class="btn">Contact Seller Now</a>
+            </div>
+        </div>
+
+
+        <div class="features-list">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Apple CarPlay & Android Auto</li>
+                <li>Backup Camera</li>
+                <li>Blind Spot Monitoring</li>
+                <li>Lane Departure Warning</li>
+                <li>Adaptive Cruise Control</li>
+                <li>Leather Seats</li>
+                <li>Sunroof</li>
+                <li>Heated Front Seats</li>
+                <li>Dual-Zone Climate Control</li>
+                <li>Premium Sound System</li>
+            </ul>
+        </div>
+
+
+        <div class="description-section">
+            <h2>Description</h2>
+            <p>This 2022 Toyota Camry is in excellent condition with only 15,000 km. The car has been meticulously maintained with all service records available. It features a powerful yet fuel-efficient 2.5L 4-cylinder engine paired with a smooth automatic transmission.</p>
+            <p>The silver exterior is in pristine condition with no scratches or dents. The interior features comfortable leather seats with plenty of legroom for both front and rear passengers. The vehicle comes loaded with modern technology including Apple CarPlay, Android Auto, and a premium sound system.</p>
+            <p>Safety features include blind spot monitoring, lane departure warning, adaptive cruise control, and a backup camera. This Camry is perfect for daily commuting or long road trips, offering reliability and comfort.</p>
+            <p><strong>Why Buy This Car?</strong></p>
+            <ul>
+                <li>Low mileage - only 15,000 km</li>
+                <li>One owner, clean title</li>
+                <li>Full service history available</li>
+                <li>No accidents reported</li>
+                <li>Recently detailed and inspected</li>
+            </ul>
+        </div>
+
+
+        <div class="seller-info">
+            <h3>Seller Information</h3>
+            <p><strong>Name:</strong> Gurrahmat Sandhu</p>
+            <p><strong>Location:</strong> Sri Ganganagar,Rajasthan</p>
+            <p><strong>Phone:</strong> +91 83400-58000</p>
+            <p><strong>Email:</strong> gurrahmatsinghs.com</p>
+            <p><strong>Available for:</strong> Test drives and inspections</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="contact.html" class="btn" style="font-size: 1.2rem; padding: 15px 40px;">Contact Seller Now</a>
+        </div>
+
+    <div id="img1" class="lightbox">
+        <a href="#" class="lightbox-close">&times;</a>
+        <a href="#img3" class="lightbox-prev">&#10094;</a>
+        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=1600" alt="Toyota Camry">
+        <a href="#img2" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click image to zoom • Use ← → to navigate • Click × to close</div>
+    </div>
+
+    <div id="img2" class="lightbox">
+        <a href="#" class="lightbox-close">&times;</a>
+        <a href="#img1" class="lightbox-prev">&#10094;</a>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVn4k_Yd6zfAmBTsFUNL4x3F-oowqsw16Bc-juiXnTreh2LJG6qM5u98AZ-fWqzGBUQHDCSQ0EG43BqlT_mqPvlPjAY63tf5COoiyzJl6Lg&s=10" alt="Toyota Camry Side">
+        <a href="#img3" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click image to zoom • Use ← → to navigate • Click × to close</div>
+    </div>
+
+    <div id="img3" class="lightbox">
+        <a href="#" class="lightbox-close">&times;</a>
+        <a href="#img2" class="lightbox-prev">&#10094;</a>
+        <img src="data:image/jpeg;base64,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" alt="Toyota Camry Interior">
+        <a href="#img1" class="lightbox-next">&#10095;</a>
+        <div class="zoom-text">Click image to zoom • Use ← → to navigate • Click × to close</div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2026 MotorDeal. All rights reserved.</p>
+        <p>Email: info@motordeal.com | Phone: +91 83400-58000 </p>
+    </footer>
+</body>
+</html>
