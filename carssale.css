@@ -8,8 +8,18 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+    
+            /* Using the generated image URL */
+            background-image: url('http://googleusercontent.com/image_generation_content/0');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            color: #ffffff;
+        
 }
 
 header {
@@ -73,7 +83,12 @@ nav a:hover {
 }
 
 .hero {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background-image: url('https://unsplash.com/photos/a-black-car-parked-in-front-of-a-tall-building-NQfVC7QGHr0');
+    
+    /* Optional: Controls for better appearance */
+    background-repeat: no-repeat;  /* Prevents image from tiling */
+    background-size: cover;        /* Resizes image to cover entire area */
+    background-attachment: fixed;  
     color: #ffffff;
     text-align: center;
     padding: 120px 20px;
