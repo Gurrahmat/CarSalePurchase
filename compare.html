@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Cars - MotorDeals</title>
+    <link href="carssale.css" rel="stylesheet">
+    <style>
+        .compare-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #111;
+            border-radius: 20px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 10px 40px rgba(212,175,55,0.2);
+            color: #fff;
+            overflow-x: auto;
+        }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .compare-table th, .compare-table td {
+            padding: 20px;
+            border-bottom: 1px solid #333;
+            min-width: 200px;
+        }
+        .compare-table th {
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+        .compare-table tr:hover {
+            background: rgba(212,175,55,0.05);
+        }
+        .car-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+        }
+        .remove-btn {
+            background: #ff3b30;
+            color: #fff;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><span class="logo-text">MotorDeals</span></div>
+            <ul>
+                <li><a href="carsale.html#home">Home</a></li>
+                <li><a href="carsale.html#cars">Cars</a></li>
+                <li><a href="sell.html">Sell Car</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="compare-container">
+        <h1 style="text-align: center; color: #d4af37;">Vehicle Comparison</h1>
+        <div id="comparison-content">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 MotorDeals 🚙 — All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const staticData = {
+                "c1": { brand: "Toyota", model: "Camry", year: 2022, mileage: "15,000 km", color: "Silver", fuel: "Diesel", price: "₹30,00,000", image: "https://media.ed.edmunds-media.com/toyota/camry-hybrid/2021/oem/2021_toyota_camry-hybrid_sedan_xse_fq_oem_1_1600.jpg", owners: "1st Owner", regNo: "RJ13CA4287", transmission: "Automatic", engine: "2.5L 4-Cylinder" },
+                "c2": { brand: "Honda", model: "Accord", year: 2023, mileage: "8,000 km", color: "Black", fuel: "Petrol", price: "₹27,00,000", image: "https://automobiles.honda.com/-/media/Honda-Automobiles/Vehicles/2026/accord-sedan/Mini-Gallery-OP/Exterior/2026_Accord_Gallery_Exterior_01.jpg?sc_lang=en&mw=767&hash=00FEE73F17B3BF007FF9F0C8FEF90CEE", owners: "1st Owner", regNo: "DL01AB1234", transmission: "CVT Automatic", engine: "1.5L Turbo" },
+                "c3": { brand: "Ford", model: "Mustang", year: 2021, mileage: "22,000 km", color: "Red", fuel: "Petrol", price: "₹44,00,000", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAR5cRPJ5rCs6km4odW8RpRP5kpDl0CjXuiw&s", owners: "2nd Owner", regNo: "MH12DE5678", transmission: "Automatic", engine: "5.0L V8" },
+                "c4": { brand: "BMW", model: "X5", year: 2023, mileage: "5,000 km", color: "White", fuel: "Diesel", price: "₹57,00,000", image: "https://static.toiimg.com/thumb/msid-101758631,width-400,resizemode-4/101758631.jpg", owners: "1st Owner", regNo: "HR26CF9999", transmission: "Automatic", engine: "3.0L Inline-6" },
+                "c5": { brand: "Toyota", model: "Innova", year: 2022, mileage: "12,000 km", color: "Silver", fuel: "Hybrid", price: "₹28,00,000", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwOVLRP8rrqdQ1XLFLCRhLK8PrecJGxDkv8Q&s", owners: "1st Owner", regNo: "RJ14GA3333", transmission: "Automatic", engine: "2.4L Hybrid" },
+                "c6": { brand: "Honda", model: "City", year: 2023, mileage: "6,000 km", color: "Grey", fuel: "Petrol", price: "₹10,00,000", image: "https://www.team-bhp.com/sites/default/files/styles/amp_high_res/public/2023-honda-city-facelift-01.jpg", owners: "1st Owner", regNo: "UP16JK4444", transmission: "CVT Automatic", engine: "1.5L i-VTEC" }
+            };
+
+            let compareList = JSON.parse(localStorage.getItem("compareList") || "[]");
+            const approved = JSON.parse(localStorage.getItem("approvedCars") || "[]");
+
+            // Combine static + dynamic
+            const allData = { ...staticData };
+            approved.forEach(car => {
+                allData[car.id] = {
+                    brand: car.brand,
+                    model: car.model,
+                    year: car.year,
+                    mileage: Number(car.mileage).toLocaleString("en-IN") + " km",
+                    color: car.color || "—",
+                    fuel: car.fuel || "—",
+                    price: "₹" + Number(car.price).toLocaleString("en-IN"),
+                    image: car.image || "https://via.placeholder.com/400x250?text=No+Photo",
+                    owners: car.owners || "—",
+                    regNo: car.regNo || "—",
+                    transmission: car.transmission || "—",
+                    engine: car.engine || "—"
+                };
+            });
+
+            const container = document.getElementById("comparison-content");
+
+            function renderTable() {
+                if (compareList.length === 0) {
+                    container.innerHTML = `<p style="text-align: center; font-size: 1.2rem; padding: 40px;">No cars selected for comparison. <br><br><a href="carsale.html#cars" class="btn">Back to Browse</a></p>`;
+                    return;
+                }
+
+                const selectedCars = compareList.map(id => allData[id]).filter(Boolean);
+
+                if (selectedCars.length === 0) {
+                    container.innerHTML = `<p style="text-align: center; padding: 40px;">Error resolving data.</p>`;
+                    return;
+                }
+
+                let html = `<table class="compare-table">`;
+                
+                // Row 1: Image
+                html += `<tr><td></td>`;
+                selectedCars.forEach((car, index) => {
+                    html += `<td>
+                        <img class="car-img" src="${car.image}">
+                        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                    </td>`;
+                });
+                html += `</tr>`;
+
+                // Row 2: Brand & Model
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Vehicle</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td style="font-size: 1.2rem; font-weight: bold;">${car.brand} ${car.model}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 3: Price
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Price</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td style="color: #d4af37; font-size: 1.3rem; font-weight: bold;">${car.price}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 4: Year
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Year</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.year}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 5: Transmission
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Transmission</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.transmission}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 6: Engine
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Engine</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.engine}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 7: Mileage
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Mileage</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.mileage}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 8: Color
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Color</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.color}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 9: Fuel Type
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Fuel Type</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.fuel}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 10: Ownership
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Ownership</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.owners}</td>`;
+                });
+                html += `</tr>`;
+
+                // Row 11: Registration
+                html += `<tr><td style="color: #d4af37; font-weight: bold;">Registration No.</td>`;
+                selectedCars.forEach(car => {
+                    html += `<td>${car.regNo}</td>`;
+                });
+                html += `</tr>`;
+
+                html += `</table>`;
+                container.innerHTML = html;
+            }
+
+            window.removeItem = function(index) {
+                compareList.splice(index, 1);
+                localStorage.setItem("compareList", JSON.stringify(compareList));
+                renderTable();
+            }
+
+            renderTable();
+        });
+    </script>
+</body>
+</html>
