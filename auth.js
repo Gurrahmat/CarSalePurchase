@@ -136,7 +136,7 @@ function injectNavUser() {
 
 function requireAuth() {
   const exempt = ["login.html", "signup.html"];
-  const page   = window.location.pathname.split("/").pop() || "index.html";
+  const page   = window.location.pathname.split("/").pop() || "carsale.html";
   if (exempt.includes(page)) return;
   if (!getSession()) {
     window.location.href = "login.html";
@@ -216,7 +216,7 @@ function initAuthPage() {
         return showAlert("error", "❌ Invalid email or password.");
       setSession(user);
       showAlert("success", `✅ Welcome back, ${user.firstName}! Redirecting…`);
-      setTimeout(() => { window.location.href = "index.html"; }, 1000);
+      setTimeout(() => { window.location.href = "carsale.html"; }, 1000);
     });
 
     const forgot = document.getElementById("forgotLink");
@@ -229,7 +229,7 @@ function initAuthPage() {
         alert(u
           ? "✅ Reset link sent to " + u.email + "\n(Demo: integrate email service in production.)"
           : "❌ No account with that email.");
-      });q
+      });
     }
   }
 
@@ -248,7 +248,10 @@ function initAuthPage() {
 
       if (!firstName || !lastName) return showAlert("error", "Enter your full name.");
       if (!/^\S+@\S+\.\S+$/.test(email)) return showAlert("error", "Enter a valid email.");
-      if (password.length < 6) return showAlert("error", "Password must be at least 6 characters.");
+      if (password.length < 8) return showAlert("error", "Password must be at least 8 characters.");
+      if (!/[A-Z]/.test(password)) return showAlert("error", "Password must contain an uppercase letter.");
+      if (!/[0-9]/.test(password)) return showAlert("error", "Password must contain a number.");
+      if (!/[^A-Za-z0-9]/.test(password)) return showAlert("error", "Password must contain a special character.");
       if (password !== confirm) return showAlert("error", "Passwords do not match.");
       if (!agree) return showAlert("error", "Please accept the Terms of Service.");
       if (findUser(email)) return showAlert("error", "Account already exists. Please login.");
