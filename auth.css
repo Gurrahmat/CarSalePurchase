@@ -1,5 +1,9 @@
 
 
+* {
+    box-sizing: border-box;
+}
+
 .auth-section {
     min-height: calc(100vh - 90px);
     background: linear-gradient(135deg, #000 0%, #1a1a1a 60%, #0d0d0d 100%);
@@ -137,6 +141,7 @@
 
 .auth-field input {
     width: 100%;
+    min-width: 0;
     padding: 12px 14px;
     border: 2px solid #e5e5e5;
     border-radius: 10px;
@@ -161,7 +166,7 @@
 }
 
 /* password toggle */
-.auth-password-wrap { position: relative; }
+.auth-password-wrap { position: relative; width: 100%; }
 .auth-password-wrap input { padding-right: 45px; }
 .toggle-password {
     position: absolute;
