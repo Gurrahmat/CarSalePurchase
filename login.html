@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up - MotorDeals</title>
+    <link href="auth.css" rel="stylesheet">
+    <style>
+        .auth-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e5e5e5;
+        }
+        .auth-tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .auth-tab-btn.active-tab {
+            color: #d4af37;
+            border-bottom: 3px solid #d4af37;
+
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+
+<section class="auth-section">
+    <div class="auth-wrapper">
+        <!-- Left Visual -->
+        <div class="auth-visual">
+            <div class="auth-visual-inner">
+                <h1>MotorDeals</h1>
+                <p class="auth-tagline">Drive your dreams with the most trusted used vehicle gateway in the region.</p>
+                <ul class="auth-benefits">
+                    <li>✔ Verified cross-inspected fleets</li>
+                    <li>✔ Side-by-side vehicle spec comparisons</li>
+                    <li>✔ Instant seller callback routing</li>
+                </ul>
+                <span class="auth-visual-badge">Member Portal</span>
+            </div>
+        </div>
+
+        <!-- Right Form -->
+        <div class="auth-form-panel">
+            <div id="authAlert" class="auth-alert" style="display: none;"></div>
+
+            <div class="auth-tabs">
+                <button id="tab-login" class="auth-tab-btn active-tab">Login</button>
+                <button id="tab-signup" class="auth-tab-btn">Sign Up</button>
+            </div>
+
+            <!-- Login Pane -->
+            <div id="pane-login" style="display: flex; flex-direction: column;">
+                <h2 class="auth-title">Welcome Back</h2>
+                <p class="auth-subtitle">Sign in using registered metrics.</p>
+                
+                <form id="loginForm" class="auth-form">
+                    <div class="auth-field">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="auth-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="auth-password-wrap">
+                            <input type="password" id="loginPassword" required>
+                            <button type="button" class="toggle-password" data-target="loginPassword">👁️</button>
+                        </div>
+                    </div>
+                    <div class="auth-row">
+                        <label class="auth-checkbox">
+                            <input type="checkbox" id="rememberMe"> Remember session
+                        </label>
+                        <a href="#" id="forgotLink" class="auth-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-btn">Log In</button>
+                </form>
+            </div>
+
+            <!-- Signup Pane -->
+            <div id="pane-signup" style="display: none; flex-direction: column;">
+                <h2 class="auth-title">Create Account</h2>
+                <p class="auth-subtitle">Join to access personalized dashboards.</p>
+                
+                <form id="signupForm" class="auth-form">
+                    <div class="auth-grid-2">
+                        <div class="auth-field">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="auth-field">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="auth-field">
+                        <label for="signupEmail">Email Address</label>
+                        <input type="email" id="signupEmail" placeholder="example@mail.com" required>
+                    </div>
+                    <div class="auth-field">
+                        <label for="signupPhone">Phone Number</label>
+                        <input type="tel" id="signupPhone" placeholder="83400XXXXX" required>
+                    </div>
+                    <div class="auth-grid-2">
+                        <div class="auth-field">
+                            <label for="signupPassword">Password</label>
+                            <div class="auth-password-wrap">
+                                <input type="password" id="signupPassword" required>
+                                <button type="button" class="toggle-password" data-target="signupPassword">👁️</button>
+                            </div>
+                            <div class="strength-meter"><div id="strengthBar" class="strength-bar"></div></div>
+                            <div id="strengthText" class="strength-text">Password strength</div>
+                        </div>
+                        <div class="auth-field">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                    </div>
+                    <label class="auth-checkbox terms-box">
+                        <input type="checkbox" id="agreeTerms" required> I agree to the Terms of Service.
+                    </label>
+                    <button type="submit" class="auth-btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="auth.js"></script>
+</body>
+</html>
