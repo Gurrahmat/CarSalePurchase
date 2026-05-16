@@ -136,7 +136,7 @@ function injectNavUser() {
 
 function requireAuth() {
   const exempt = ["login.html", "signup.html"];
-  const page   = window.location.pathname.split("/").pop() || "carsale.html";
+  const page   = window.location.pathname.split("/").pop() || "index.html";
   if (exempt.includes(page)) return;
   if (!getSession()) {
     window.location.href = "login.html";
@@ -216,7 +216,7 @@ function initAuthPage() {
         return showAlert("error", "❌ Invalid email or password.");
       setSession(user);
       showAlert("success", `✅ Welcome back, ${user.firstName}! Redirecting…`);
-      setTimeout(() => { window.location.href = "carsale.html"; }, 1000);
+      setTimeout(() => { window.location.href = "index.html"; }, 1000);
     });
 
     const forgot = document.getElementById("forgotLink");
