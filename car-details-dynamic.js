@@ -107,12 +107,12 @@ if (id) {
         <div class="no-data">
             <h2>Car not found</h2>
             <p>This listing may have been removed or the link is invalid.</p>
-            <br><a href="carsale.html#cars" class="btn">Browse All Cars</a>
+            <br><a href="index.html#cars" class="btn">Browse All Cars</a>
         </div>`;
 } else {
     document.getElementById("car-content").innerHTML = `
         <div class="no-data">
             <h2>No car selected</h2>
-            <a href="carsale.html#cars" class="btn">Browse All Cars</a>
+            <a href="index.html#cars" class="btn">Browse All Cars</a>
         </div>`;
 }
